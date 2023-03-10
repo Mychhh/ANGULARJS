@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   // component selector
   selector: 'app-root',
-  // files 
+  // template location
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
