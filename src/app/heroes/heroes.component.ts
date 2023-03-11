@@ -9,7 +9,7 @@ import { HEROES } from '../mock-heroes';
 })
 export class HeroesComponent {
 
-  selectedHero?: Hero; //Don't know how it works
+  selectedHero?: Hero; //Don't know how it works, looks like ternary
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
