@@ -10,6 +10,10 @@ h2 {
     max-width: 1000px;
 
     /* flexbox */
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -21,14 +25,14 @@ h2 {
 a {
     background-color: #3f525c;
     border-radius: 2px;
-    padding: 1rem;
-    font-size: 1.2rem;
+    padding: 0.7rem;
+    font-size: 1rem;
     text-decoration: none;
     display: inline-block;
     color: #fff;
     text-align: center;
     width: 100%;
-    min-width: 70px;
+    min-width: 50px;
     margin: .5rem auto;
     box-sizing: border-box;
 
@@ -46,5 +50,5 @@ a {
 }
 
 a:hover {
-    background-color: #000;
+    background-color: black;
 }
