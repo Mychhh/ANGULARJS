@@ -1,0 +1,6 @@
+<li class="book">
+    <img [src]="sanitizeImageUrl(book.image)" alt="{{ book.name | titlecase}}" width="100">
+    <p>{{ book.name | titlecase}} by {{ book.author | titlecase}}</p>
+    <p class="currency">{{ book.amount | currency:'INR'}}</p>
+    <button type="button" (click)="addToCart()">Add to Cart</button>
+</li>
