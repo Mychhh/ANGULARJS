@@ -21,12 +21,13 @@ this is two way data binding using ng Model
     <button type="button">Add to Cart</button>
 </li> -->
 
-<ul *ngIf=" isShowing">
+<ul class="grid grid-cols-2 gap-4">
 
     <ng-container *ngFor="let singleBook of books; let i = index">
         <!-- parenthesis is child to parent -->
         <!-- bracket is parent to child -->
-        <app-book (bookEmitter)="addToCart(singleBook)" [book]="singleBook"></app-book>
+        <!-- <app-book (bookEmitter)="addToCart(singleBook)" [book]="singleBook"></app-book> -->
+        <app-book [book]="singleBook" class="flex flex-col"></app-book>
     </ng-container>
 
 </ul>

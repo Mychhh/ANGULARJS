@@ -17,13 +17,13 @@ export class BooksComponent {
     this.books = booksService.getBooks();
   }
 
-  cart: Book[] = [];
+  // cart: Book[] = [];
 
   isShowing: boolean = true;
 
-  addToCart(book: Book) {
-    console.log(book)
-  }
+  // addToCart(book: Book) {
+  //   console.log(book)
+  // }
 
   // isDisable: boolean = false;
   // myName: string = '';
