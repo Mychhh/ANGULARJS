@@ -1,0 +1,10 @@
+.logo {
+    width: 2.75rem;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 376px) {
+    .the-container {
+        width: 90%;
+    }
+}

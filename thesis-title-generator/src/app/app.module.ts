@@ -1,6 +1,9 @@
+// Modules
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ThesisTitleGeneratorModule } from './thesis-title-generator/thesis-title-generator.module'
 
+// Component
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -8,7 +11,8 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ThesisTitleGeneratorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
