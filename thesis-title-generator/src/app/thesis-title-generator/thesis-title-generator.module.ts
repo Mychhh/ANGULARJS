@@ -23,7 +23,8 @@ import { CourseComponent } from './fields/course/course.component';
   exports: [
     NavigationComponent,
     HeroComponent,
-    FieldsComponent
+    FieldsComponent,
   ],
+
 })
 export class ThesisTitleGeneratorModule { }
