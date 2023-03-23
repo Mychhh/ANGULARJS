@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'
+import { ClipboardModule } from 'ngx-clipboard';
 
 // routes
 import { RouterModule, Routes } from '@angular/router';
@@ -39,7 +40,8 @@ const thesisTitleGeneratorRoutes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forRoot(thesisTitleGeneratorRoutes)
+    RouterModule.forRoot(thesisTitleGeneratorRoutes),
+    ClipboardModule,
   ],
   exports: [
     ContainerComponent,
@@ -47,7 +49,7 @@ const thesisTitleGeneratorRoutes: Routes = [
     HeroComponent,
     FieldsComponent,
     GenerateTitleComponent,
-    MadeWithLoveComponent
+    MadeWithLoveComponent,
   ],
   // providers: [
   //   ThesisTitleGeneratorService

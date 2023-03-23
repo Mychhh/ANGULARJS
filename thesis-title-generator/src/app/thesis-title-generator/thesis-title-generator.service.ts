@@ -40,8 +40,6 @@ export class ThesisTitleGeneratorService {
 
   chosenCourse: string = '';
 
-  // isInHome: boolean = true;
-
   constructor(private computerITService: ComputerITService) { }
 
   getCourses(): Courses[] {
@@ -52,23 +50,16 @@ export class ThesisTitleGeneratorService {
     this.chosenCourse = course;
   }
 
-  // get thesis title object from computer it services
   getThesisTitleFromIT(): ThesisTitle {
     return this.computerITService.getAThesisTitle();
   }
 
-  // isInHomeObservable = new Observable((observer) => {
-  //   observer.next(this.isInHome);
-  // });
-
-  // isInHomeFunction(ishome: boolean): void {
-
-  //   this.isInHome = ishome;
-
-  //   this.isInHomeObservable.subscribe((value) => {
-  //     return value;
-  //   });
-  // }
-
+  // change copy sign
+  changeCopySign(copySign: string): string {
+    // const timeoutID = setTimeout(() => {
+    // }, 1000);
+    return copySign = 'Copy';
+    // return copySign;
+  }
 
 }

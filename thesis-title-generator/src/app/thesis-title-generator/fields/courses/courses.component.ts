@@ -19,19 +19,25 @@ export class CoursesComponent {
     this.courses = this.thesisTitleGeneratorService.getCourses();
   }
 
-  clickToGenerate(): void {
+  courseClick(particularCourse: Courses): void {
+    // functions
+    this.functionCourse(particularCourse.course);
+  }
+
+  // functions
+  functionCourse(functionCourse: string): void {
+    switch (functionCourse) {
+      case ('IT'):
+        this.thesisTitleGeneratorService.handleChosenCourse(functionCourse);
+        // this.functionRoute();
+        break;
+    }
+    this.functionRoute();
+  }
+
+  functionRoute(): void {
     this.router.navigate(['/generate-title']);
   }
 
-  courseClick(particularCourse: Courses): void {
-
-    console.log(particularCourse);
-
-    switch (particularCourse.course) {
-      case ('IT'):
-        this.thesisTitleGeneratorService.handleChosenCourse(particularCourse.course);
-        break;
-    }
-  }
-
 }
+

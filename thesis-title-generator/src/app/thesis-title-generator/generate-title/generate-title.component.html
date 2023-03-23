@@ -1,11 +1,13 @@
 <div class="the-container w-10/12 mx-auto flex flex-col items-center gap-3">
-    <h3 class="text-lg font-semibold">Click the button below to generate thesis title idea {{courseToGenerateTitle}}
+    <h3 class="text-lg font-semibold">Click the button below to generate thesis title idea
+        {{courseToGenerateTitle}}
     </h3>
 
     <!-- generated title -->
     <div class="flex items-center gap-3 px-5 py-2 color1 rounded-full">
         <p>{{generatedThesisIdea.thesis_title}}</p>
-        <button type="button" class="rounded-full color2 py-2 px-5 hover:scale-110 duration-75 ease-out">Copy</button>
+        <button type="button" class="rounded-full color2 py-2 px-5 hover:scale-110 duration-75 ease-out"
+            (click)="copy(generatedThesisIdea)">{{copyText}}</button>
     </div>
 
     <!-- generated title description-->
@@ -15,7 +17,8 @@
 
     <div>
         <button type="button"
-            class="text-lg font-normal rounded-full color2 py-2 px-5 hover:scale-110 duration-75 ease-out">Generate</button>
+            class="text-lg font-normal rounded-full color2 py-2 px-5 hover:scale-110 duration-75 ease-out"
+            (click)="whatCourseToGenerateTitle(courseAcronym)">Generate</button>
     </div>
 </div>
 
