@@ -13,12 +13,42 @@
 
 :root {
     --COLOR1: #D9D9D9;
+    --COLOR2: #f43f5e;
+    --COLOR-BLACK: #000;
+    --COLOR-WHITE: #fff;
+}
+
+.color-black {
+    background-color: var(--COLOR1);
+}
+
+.color-white {
+    background-color: var(--COLOR1);
 }
 
 .color1 {
     background-color: var(--COLOR1);
 }
 
+.color2 {
+    background-color: var(--COLOR2);
+}
+
+.logo {
+    width: 2.75rem;
+    object-fit: contain;
+}
+
 .the-container {
     max-width: 1440px;
+}
+
+.course {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 376px) {
+    .the-container {
+        width: 90%;
+    }
 }

@@ -1,5 +1,12 @@
 <div class="color1 h-16 flex items-center">
-    <div class="the-container w-10/12 mx-auto ">
+    <div class="the-container w-10/12 mx-auto flex justify-between items-center">
+        <!-- <img src="assets/images/Logo.png" alt="Logo" class="logo" (click)="homeClick()"> -->
         <img src="assets/images/Logo.png" alt="Logo" class="logo">
+
+        <!-- <ng-template [ngIf]="isHome == false">
+            <a routerLink="/home" (click)="homeClick()">Home {{isHome}}</a>
+        </ng-template> -->
+        <!-- <a routerLink="/home" (click)="homeClick()">Home {{isHome}}</a> -->
+        <a routerLink="/home">Home</a>
     </div>
 </div>

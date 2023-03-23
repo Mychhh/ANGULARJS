@@ -1,6 +1,6 @@
 <div class="w-11/12 mx-auto flex flew-row flex-wrap gap-5 justify-start">
     <ng-template ngFor let-courseParent [ngForOf]="courses">
-        <app-course class="course" [course]="courseParent"></app-course>
+        <app-course class="course" [course]="courseParent" (click)="courseClick(courseParent)"></app-course>
     </ng-template>
 </div>
 

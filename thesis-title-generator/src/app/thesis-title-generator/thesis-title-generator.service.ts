@@ -1,7 +1,13 @@
 import { Injectable } from '@angular/core';
 
 // Interface
-import { Courses } from '../interface/courses';
+import { Courses } from '../interface/Courses'
+import { ThesisTitle } from '../interface/ThesisTitle';
+
+// service 
+import { ComputerITService } from '../thesis-title-generator/computer-it.service'
+
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -32,10 +38,37 @@ export class ThesisTitleGeneratorService {
     },
   ]
 
-  constructor() { }
+  chosenCourse: string = '';
 
-  getCourses() {
+  // isInHome: boolean = true;
+
+  constructor(private computerITService: ComputerITService) { }
+
+  getCourses(): Courses[] {
     return this.courses;
   }
+
+  handleChosenCourse(course: string): void {
+    this.chosenCourse = course;
+  }
+
+  // get thesis title object from computer it services
+  getThesisTitleFromIT(): ThesisTitle {
+    return this.computerITService.getAThesisTitle();
+  }
+
+  // isInHomeObservable = new Observable((observer) => {
+  //   observer.next(this.isInHome);
+  // });
+
+  // isInHomeFunction(ishome: boolean): void {
+
+  //   this.isInHome = ishome;
+
+  //   this.isInHomeObservable.subscribe((value) => {
+  //     return value;
+  //   });
+  // }
+
 
 }
