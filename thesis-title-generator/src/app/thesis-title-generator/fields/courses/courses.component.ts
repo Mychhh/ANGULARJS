@@ -16,26 +16,15 @@ export class CoursesComponent {
   courses: Courses[] = [];
 
   constructor(private router: Router, private thesisTitleGeneratorService: ThesisTitleGeneratorService) {
-    this.courses = this.thesisTitleGeneratorService.getCourses();
+    this.courses = this.thesisTitleGeneratorService.getComputerCourses();
   }
 
-  courseClick(particularCourse: Courses): void {
-    // functions
-    this.functionCourse(particularCourse.course);
-  }
+  functionCourse(particularCourse: Courses): void {
 
-  // functions
-  functionCourse(functionCourse: string): void {
-    switch (functionCourse) {
-      case ('IT'):
-        this.thesisTitleGeneratorService.handleChosenCourse(functionCourse);
-        // this.functionRoute();
-        break;
-    }
-    this.functionRoute();
-  }
+    // choose what course to generate
+    this.thesisTitleGeneratorService.getWhatCourseToGenerate(particularCourse.course);
 
-  functionRoute(): void {
+    // navigate to generate title
     this.router.navigate(['/generate-title']);
   }
 

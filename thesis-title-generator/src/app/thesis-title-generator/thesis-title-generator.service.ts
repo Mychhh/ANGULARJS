@@ -7,6 +7,9 @@ import { ThesisTitle } from '../interface/ThesisTitle';
 // service 
 import { ComputerITService } from '../thesis-title-generator/computer-it.service'
 
+// clipboard library
+import { ClipboardService } from 'ngx-clipboard';
+
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -40,26 +43,46 @@ export class ThesisTitleGeneratorService {
 
   chosenCourse: string = '';
 
-  constructor(private computerITService: ComputerITService) { }
+  constructor(private computerITService: ComputerITService, private clipboardService: ClipboardService) { }
 
-  getCourses(): Courses[] {
-    return this.courses;
+  // Copy
+  copyToClipBoard(thesisTitle: ThesisTitle): void {
+    this.clipboardService.copy(
+      `Title: ${thesisTitle.thesis_title} 
+
+Description: ${thesisTitle.thesis_title_description}`);
   }
-
-  handleChosenCourse(course: string): void {
-    this.chosenCourse = course;
-  }
-
-  getThesisTitleFromIT(): ThesisTitle {
-    return this.computerITService.getAThesisTitle();
-  }
-
-  // change copy sign
   changeCopySign(copySign: string): string {
     // const timeoutID = setTimeout(() => {
     // }, 1000);
     return copySign = 'Copy';
-    // return copySign;
+  }
+
+  // get Computer Courses
+  getComputerCourses(): Courses[] {
+    return this.courses;
+  }
+
+  // choose what course to generate
+  getWhatCourseToGenerate(particularCourse: string): void {
+
+    // switch case statement for identifying what course to generate
+    switch (particularCourse) {
+      case ('IT'):
+        this.handleChosenCourse(particularCourse);
+        break;
+    }
+
+  }
+
+  // handle value of course
+  handleChosenCourse(course: string): void {
+    this.chosenCourse = course;
+  }
+
+  // get thesis title from IT using a dependency service
+  getThesisTitleFromIT(): ThesisTitle {
+    return this.computerITService.getAThesisTitle();
   }
 
 }

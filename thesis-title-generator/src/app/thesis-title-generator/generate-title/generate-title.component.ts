@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 //service 
 import { ThesisTitleGeneratorService } from '../thesis-title-generator.service';
-import { ClipboardService } from 'ngx-clipboard';
 
 // interface
 import { ThesisTitle } from 'src/app/interface/ThesisTitle';
@@ -12,6 +11,7 @@ import { ThesisTitle } from 'src/app/interface/ThesisTitle';
   templateUrl: './generate-title.component.html',
   styleUrls: ['./generate-title.component.css']
 })
+
 export class GenerateTitleComponent implements OnInit {
 
   copyText: string = 'Copy'
@@ -19,36 +19,34 @@ export class GenerateTitleComponent implements OnInit {
   courseToGenerateTitle: string = '';
   generatedThesisIdea: ThesisTitle = <ThesisTitle>{};
 
-  constructor(private thesisTitleGeneratorService: ThesisTitleGeneratorService, private clipboardService: ClipboardService) {
-
-  }
+  constructor(private thesisTitleGeneratorService: ThesisTitleGeneratorService) { }
 
   ngOnInit(): void {
     this.courseAcronym = this.thesisTitleGeneratorService.chosenCourse;
 
     // functions
-    this.whatCourseToGenerateTitle(this.thesisTitleGeneratorService.chosenCourse);
+    this.clickCourseToGenerateTitle(this.thesisTitleGeneratorService.chosenCourse);
   }
 
   // functions
-  whatCourseToGenerateTitle(courseToGenerateTitle: string): void {
+  clickCourseToGenerateTitle(courseToGenerateTitle: string): void {
 
     this.copyText = 'Copy';
 
+    // switch case statement for identifying what course to generate
     switch (courseToGenerateTitle) {
       case ('IT'):
         this.courseToGenerateTitle = 'for BS Information and Technology';
         this.generatedThesisIdea = this.thesisTitleGeneratorService.getThesisTitleFromIT();
         break;
     }
+
   }
 
   copy(thesisTitle: ThesisTitle): void {
-    this.clipboardService.copy(
-      `
-    Title: ${thesisTitle.thesis_title}
-    Description: ${thesisTitle.thesis_title_description}
-    `)
+
+    // copy the title and description
+    this.thesisTitleGeneratorService.copyToClipBoard(thesisTitle);
 
     this.copyText = 'Copied';
   }
