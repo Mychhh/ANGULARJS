@@ -21,13 +21,16 @@ export class GenerateTitleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.whatCourse(this.thesisTitleGeneratorService.chosenCourse);
-    this.generatedThesisIdea = this.thesisTitleGeneratorService.getThesisTitleFromIT();
+    this.whatCourseToGenerateTitle(this.thesisTitleGeneratorService.chosenCourse);
   }
 
-  whatCourse(whatCourse: string): void {
-    if (whatCourse === 'IT') {
-      this.courseToGenerateTitle = `for BS Information and Technology`;
+  whatCourseToGenerateTitle(courseToGenerateTitle: string): void {
+    switch (courseToGenerateTitle) {
+      case ('IT'):
+        this.courseToGenerateTitle = 'for BS Information and Technology';
+        this.generatedThesisIdea = this.thesisTitleGeneratorService.getThesisTitleFromIT();
+        break;
     }
   }
+
 }

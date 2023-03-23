@@ -1,9 +1,6 @@
-<div class="w-11/12 mx-auto flex flew-row flex-wrap gap-5 justify-start">
+<div class="w-11/12 mx-auto flex flew-row flex-wrap gap-5 justify-start bg-blue-900">
     <ng-template ngFor let-courseParent [ngForOf]="courses">
-        <app-course class="course" [course]="courseParent" (click)="courseClick(courseParent)"></app-course>
+        <app-course class="course" [course]="courseParent"
+            (click)="courseClick(courseParent); clickToGenerate();"></app-course>
     </ng-template>
 </div>
-
-<!-- <div class="w-11/12 mx-auto flex flew-row flex-wrap gap-5 justify-start">
-    <app-course class="course"></app-course>
-</div> -->

@@ -79,7 +79,6 @@ export class ComputerITService {
   constructor() { }
 
   getAThesisTitle(): ThesisTitle {
-
     this.titleNumber = Math.floor((Math.random() * this.titleIdeasForIT.length) + 1);
     return this.titleIdeasForIT[this.titleNumber - 1];
   }
