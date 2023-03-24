@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 //service 
 import { ThesisTitleGeneratorService } from '../thesis-title-generator.service';
@@ -23,15 +23,14 @@ export class GenerateTitleComponent implements OnInit {
 
   ngOnInit(): void {
     this.courseAcronym = this.thesisTitleGeneratorService.chosenCourse;
-
     // functions
-    this.clickCourseToGenerateTitle(this.thesisTitleGeneratorService.chosenCourse);
+    this.clickCourseToGenerateTitle(this.courseAcronym);
   }
 
   // functions
   clickCourseToGenerateTitle(courseToGenerateTitle: string): void {
 
-    this.copyText = 'Copy';
+    // this.copyText = 'Copy';
 
     // switch case statement for identifying what course to generate
     switch (courseToGenerateTitle) {
@@ -39,17 +38,16 @@ export class GenerateTitleComponent implements OnInit {
         this.courseToGenerateTitle = 'for BS Information and Technology';
         this.generatedThesisIdea = this.thesisTitleGeneratorService.getThesisTitleFromIT();
         break;
+      default:
+        this.courseToGenerateTitle = 'Unknown';
+        break;
     }
 
   }
 
   copy(thesisTitle: ThesisTitle): void {
-
-    // copy the title and description
     this.thesisTitleGeneratorService.copyToClipBoard(thesisTitle);
-
     this.copyText = 'Copied';
   }
-
 
 }

@@ -9,6 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 // service
 import { ThesisTitleGeneratorService } from './thesis-title-generator.service';
+import { ComputerITService } from './computer-it.service';
 
 // component
 import { ContainerComponent } from '../container/container.component'
@@ -51,9 +52,10 @@ const thesisTitleGeneratorRoutes: Routes = [
     GenerateTitleComponent,
     MadeWithLoveComponent,
   ],
-  // providers: [
-  //   ThesisTitleGeneratorService
-  // ]
+  providers: [
+    // ThesisTitleGeneratorService,
+    // ComputerITService
+  ]
 
 })
 export class ThesisTitleGeneratorModule { }

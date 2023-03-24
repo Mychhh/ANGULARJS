@@ -10,8 +10,6 @@ import { ComputerITService } from '../thesis-title-generator/computer-it.service
 // clipboard library
 import { ClipboardService } from 'ngx-clipboard';
 
-import { Observable } from 'rxjs';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -47,6 +45,7 @@ export class ThesisTitleGeneratorService {
 
   // Copy
   copyToClipBoard(thesisTitle: ThesisTitle): void {
+    // copy the title and description
     this.clipboardService.copy(
       `Title: ${thesisTitle.thesis_title} 
 
@@ -70,6 +69,9 @@ Description: ${thesisTitle.thesis_title_description}`);
     switch (particularCourse) {
       case ('IT'):
         this.handleChosenCourse(particularCourse);
+        break;
+      default:
+        this.handleChosenCourse('');
         break;
     }
 

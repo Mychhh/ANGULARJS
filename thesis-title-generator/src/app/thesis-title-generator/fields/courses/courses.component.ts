@@ -16,15 +16,13 @@ export class CoursesComponent {
   courses: Courses[] = [];
 
   constructor(private router: Router, private thesisTitleGeneratorService: ThesisTitleGeneratorService) {
+    // gets computer course object to display in the options list
     this.courses = this.thesisTitleGeneratorService.getComputerCourses();
   }
 
-  functionCourse(particularCourse: Courses): void {
-
-    // choose what course to generate
-    this.thesisTitleGeneratorService.getWhatCourseToGenerate(particularCourse.course);
-
-    // navigate to generate title
+  functionCourse(particularCourse: string): void {
+    // console.log(particularCourse);
+    this.thesisTitleGeneratorService.getWhatCourseToGenerate(particularCourse);
     this.router.navigate(['/generate-title']);
   }
 
