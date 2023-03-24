@@ -31,12 +31,25 @@ export class GenerateTitleComponent implements OnInit {
   clickCourseToGenerateTitle(courseToGenerateTitle: string): void {
 
     // this.copyText = 'Copy';
+    console.log(courseToGenerateTitle);
 
     // switch case statement for identifying what course to generate
     switch (courseToGenerateTitle) {
       case ('IT'):
-        this.courseToGenerateTitle = 'for BS Information and Technology';
+        this.courseToGenerateTitle = 'for BS in Information and Technology';
         this.generatedThesisIdea = this.thesisTitleGeneratorService.getThesisTitleFromIT();
+        break;
+      case ('CS'):
+        this.courseToGenerateTitle = 'for BS in Computer Science';
+        this.generatedThesisIdea = this.thesisTitleGeneratorService.getThesisTitleFromCS();
+        break;
+      case ('CpE'):
+        this.courseToGenerateTitle = 'for BS in Computer Engineering';
+        this.generatedThesisIdea = this.thesisTitleGeneratorService.getThesisTitleFromCpE();
+        break;
+      case ('IS'):
+        this.courseToGenerateTitle = 'for BS in Information Systems';
+        this.generatedThesisIdea = this.thesisTitleGeneratorService.getThesisTitleFromIS();
         break;
       default:
         this.courseToGenerateTitle = 'Unknown';

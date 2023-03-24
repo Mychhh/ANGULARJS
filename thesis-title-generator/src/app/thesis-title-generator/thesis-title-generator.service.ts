@@ -5,7 +5,10 @@ import { Courses } from '../interface/Courses'
 import { ThesisTitle } from '../interface/ThesisTitle';
 
 // service 
-import { ComputerITService } from '../thesis-title-generator/computer-it.service'
+import { ComputerITService } from '../thesis-title-generator/computer-it.service';
+import { ComputerCsService } from './computer-cs.service';
+import { ComputerCpeService } from './computer-cpe.service';
+import { ComputerIsService } from './computer-is.service';
 
 // clipboard library
 import { ClipboardService } from 'ngx-clipboard';
@@ -41,7 +44,13 @@ export class ThesisTitleGeneratorService {
 
   chosenCourse: string = '';
 
-  constructor(private computerITService: ComputerITService, private clipboardService: ClipboardService) { }
+  constructor(
+    private computerITService: ComputerITService,
+    private computerCsService: ComputerCsService,
+    private computerCpeService: ComputerCpeService,
+    private computerIsService: ComputerIsService,
+    private clipboardService: ClipboardService
+  ) { }
 
   // Copy
   copyToClipBoard(thesisTitle: ThesisTitle): void {
@@ -62,19 +71,9 @@ Description: ${thesisTitle.thesis_title_description}`);
     return this.courses;
   }
 
-  // choose what course to generate
+  // verify course to generate
   getWhatCourseToGenerate(particularCourse: string): void {
-
-    // switch case statement for identifying what course to generate
-    switch (particularCourse) {
-      case ('IT'):
-        this.handleChosenCourse(particularCourse);
-        break;
-      default:
-        this.handleChosenCourse('');
-        break;
-    }
-
+    particularCourse == '' ? this.handleChosenCourse('') : this.handleChosenCourse(particularCourse);
   }
 
   // handle value of course
@@ -85,6 +84,18 @@ Description: ${thesisTitle.thesis_title_description}`);
   // get thesis title from IT using a dependency service
   getThesisTitleFromIT(): ThesisTitle {
     return this.computerITService.getAThesisTitle();
+  }
+  // get thesis title from CS using a dependency service
+  getThesisTitleFromCS(): ThesisTitle {
+    return this.computerCsService.getAThesisTitle();
+  }
+  // get thesis title from CpE using a dependency service
+  getThesisTitleFromCpE(): ThesisTitle {
+    return this.computerCpeService.getAThesisTitle();
+  }
+  // get thesis title from IS using a dependency service
+  getThesisTitleFromIS(): ThesisTitle {
+    return this.computerIsService.getAThesisTitle();
   }
 
 }
