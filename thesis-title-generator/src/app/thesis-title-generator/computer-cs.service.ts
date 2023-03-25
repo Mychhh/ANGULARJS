@@ -67,4 +67,8 @@ export class ComputerCsService {
     return this.titleIdeasForCS[this.titleNumber - 1];
   }
 
+  getAllTitleIdeas(): ThesisTitle[] {
+    return this.titleIdeasForCS;
+  }
+
 }

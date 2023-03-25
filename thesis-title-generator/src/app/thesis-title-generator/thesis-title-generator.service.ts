@@ -9,6 +9,7 @@ import { ComputerITService } from '../thesis-title-generator/computer-it.service
 import { ComputerCsService } from './computer-cs.service';
 import { ComputerCpeService } from './computer-cpe.service';
 import { ComputerIsService } from './computer-is.service';
+import { ComputerRandomService } from './computer-random.service'
 
 // clipboard library
 import { ClipboardService } from 'ngx-clipboard';
@@ -37,7 +38,7 @@ export class ThesisTitleGeneratorService {
       description: 'Description about the course Lorem ipsum dolor sit amet consectetur. Feugiatest semp erpharetra volutpat et aultrices auctor eget. Ullamcorper nec morbi scelerisque.',
     },
     {
-      course: 'Random',
+      course: 'Computer Random',
       description: 'Description about the course Lorem ipsum dolor sit amet consectetur. Feugiatest semp erpharetra volutpat et aultrices auctor eget. Ullamcorper nec morbi scelerisque.',
     },
   ]
@@ -49,7 +50,8 @@ export class ThesisTitleGeneratorService {
     private computerCsService: ComputerCsService,
     private computerCpeService: ComputerCpeService,
     private computerIsService: ComputerIsService,
-    private clipboardService: ClipboardService
+    private computerRandomService: ComputerRandomService,
+    private clipboardService: ClipboardService,
   ) { }
 
   // Copy
@@ -97,5 +99,9 @@ Description: ${thesisTitle.thesis_title_description}`);
   getThesisTitleFromIS(): ThesisTitle {
     return this.computerIsService.getAThesisTitle();
   }
+  // get thesis title from random computer using a dependency service
+  getThesisTitleFromRandomComputer(): ThesisTitle {
+    return this.computerRandomService.getRandomTitles();
 
+  }
 }

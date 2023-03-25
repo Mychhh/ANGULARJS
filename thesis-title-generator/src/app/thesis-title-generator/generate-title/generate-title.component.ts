@@ -25,14 +25,11 @@ export class GenerateTitleComponent implements OnInit {
     this.courseAcronym = this.thesisTitleGeneratorService.chosenCourse;
     // functions
     this.clickCourseToGenerateTitle(this.courseAcronym);
+    this.thesisTitleGeneratorService.getThesisTitleFromRandomComputer();
   }
 
   // functions
   clickCourseToGenerateTitle(courseToGenerateTitle: string): void {
-
-    // this.copyText = 'Copy';
-    console.log(courseToGenerateTitle);
-
     // switch case statement for identifying what course to generate
     switch (courseToGenerateTitle) {
       case ('IT'):
@@ -51,6 +48,10 @@ export class GenerateTitleComponent implements OnInit {
         this.courseToGenerateTitle = 'for BS in Information Systems';
         this.generatedThesisIdea = this.thesisTitleGeneratorService.getThesisTitleFromIS();
         break;
+      case ('Computer Random'):
+        this.courseToGenerateTitle = 'for Random Computer Course';
+        this.generatedThesisIdea = this.thesisTitleGeneratorService.getThesisTitleFromRandomComputer();
+        break;
       default:
         this.courseToGenerateTitle = 'Unknown';
         break;
@@ -60,7 +61,6 @@ export class GenerateTitleComponent implements OnInit {
 
   copy(thesisTitle: ThesisTitle): void {
     this.thesisTitleGeneratorService.copyToClipBoard(thesisTitle);
-    this.copyText = 'Copied';
   }
 
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ThesisTitle } from '../interface/ThesisTitle';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -65,8 +66,10 @@ export class ComputerIsService {
 
   getAThesisTitle(): ThesisTitle {
     this.titleNumber = Math.floor((Math.random() * this.titleIdeasForIS.length) + 1);
-    console.log('I am here');
     return this.titleIdeasForIS[this.titleNumber - 1];
   }
 
+  getAllTitleIdeas(): ThesisTitle[] {
+    return this.titleIdeasForIS;
+  }
 }

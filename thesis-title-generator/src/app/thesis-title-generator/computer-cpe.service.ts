@@ -78,4 +78,8 @@ export class ComputerCpeService {
     return this.titleIdeasForCPE[this.titleNumber - 1];
   }
 
+  getAllTitleIdeas(): ThesisTitle[] {
+    return this.titleIdeasForCPE;
+  }
+
 }

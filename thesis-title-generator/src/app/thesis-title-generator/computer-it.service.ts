@@ -83,5 +83,10 @@ export class ComputerITService {
     return this.titleIdeasForIT[this.titleNumber - 1];
   }
 
+  getAllTitleIdeas(): ThesisTitle[] {
+    return this.titleIdeasForIT;
+  }
+
+
 }
 
