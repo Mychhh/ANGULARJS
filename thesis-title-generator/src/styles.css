@@ -44,15 +44,23 @@
     object-fit: contain;
 }
 
+.letter-spacing-1 {
+    letter-spacing: 1px;
+}
+
 .the-container {
     max-width: 1440px;
 }
 
-.course {
-    cursor: pointer;
+.grid-course-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    grid-auto-flow: row;
+    gap: 1.5em;
 }
 
 .course-card {
+    cursor: pointer;
     height: min(100%, 18rem);
 }
 
@@ -66,7 +74,7 @@
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 570px) {
     .hero-container {
         width: 100%;
     }
