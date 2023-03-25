@@ -13,7 +13,8 @@
 
 :root {
     --COLOR1: #D9D9D9;
-    --COLOR2: #f43f5e;
+    --COLOR-RED: #f43f5e;
+    --COLOR-BLUE: #3b82f6;
     --COLOR-BLACK: #000;
     --COLOR-WHITE: #fff;
 }
@@ -31,7 +32,7 @@
 }
 
 .color2 {
-    background-color: var(--COLOR2);
+    background-color: var(--COLOR-RED);
 }
 
 .logo {

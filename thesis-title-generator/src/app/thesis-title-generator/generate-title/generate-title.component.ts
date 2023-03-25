@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 
 //service 
 import { ThesisTitleGeneratorService } from '../thesis-title-generator.service';
@@ -19,13 +20,21 @@ export class GenerateTitleComponent implements OnInit {
   courseToGenerateTitle: string = '';
   generatedThesisIdea: ThesisTitle = <ThesisTitle>{};
 
-  constructor(private thesisTitleGeneratorService: ThesisTitleGeneratorService) { }
+  constructor(private router: Router, private thesisTitleGeneratorService: ThesisTitleGeneratorService) { }
 
   ngOnInit(): void {
     this.courseAcronym = this.thesisTitleGeneratorService.chosenCourse;
+    console.log(this.courseAcronym)
+    //check if there is course selected 
+    if (this.courseAcronym == '') {
+      this.router.navigate(['/home'])
+    }
+
     // functions
     this.clickCourseToGenerateTitle(this.courseAcronym);
     this.thesisTitleGeneratorService.getThesisTitleFromRandomComputer();
+
+
   }
 
   // functions
