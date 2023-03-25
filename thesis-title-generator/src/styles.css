@@ -31,8 +31,12 @@
     background-color: var(--COLOR1);
 }
 
-.color2 {
+.color-red {
     background-color: var(--COLOR-RED);
+}
+
+.color-blue {
+    background-color: var(--COLOR-BLUE);
 }
 
 .logo {
@@ -48,8 +52,22 @@
     cursor: pointer;
 }
 
+.course-card {
+    height: min(100%, 18rem);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
 @media screen and (max-width: 376px) {
     .the-container {
         width: 90%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .hero-container {
+        width: 100%;
     }
 }

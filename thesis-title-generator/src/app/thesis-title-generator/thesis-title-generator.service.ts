@@ -23,23 +23,23 @@ export class ThesisTitleGeneratorService {
   courses: Courses[] = [
     {
       course: 'IT',
-      description: 'Description about the course Lorem ipsum dolor sit amet consectetur. Feugiatest semp erpharetra volutpat et aultrices auctor eget. Ullamcorper nec morbi scelerisque.',
+      description: 'Bachelor of Science in Information Technology covers various aspects of computer science, information technology, and business management, preparing students for careers in IT and related fields.',
     },
     {
       course: 'CS',
-      description: 'Description about the course Lorem ipsum dolor sit amet consectetur. Feugiatest semp erpharetra volutpat et aultrices auctor eget. Ullamcorper nec morbi scelerisque.',
+      description: 'Bachelor of Science in Computer Science program teaches computer programming, algorithms, data structures, software engineering, databases, and computer networks.',
     },
     {
       course: 'CpE',
-      description: 'Description about the course Lorem ipsum dolor sit amet consectetur. Feugiatest semp erpharetra volutpat et aultrices auctor eget. Ullamcorper nec morbi scelerisque.',
+      description: 'Bachelor of Science in Computer Engineering combines computer science and electrical engineering principles to design and develop computer systems and networks.',
     },
     {
       course: 'IS',
-      description: 'Description about the course Lorem ipsum dolor sit amet consectetur. Feugiatest semp erpharetra volutpat et aultrices auctor eget. Ullamcorper nec morbi scelerisque.',
+      description: 'Bachelor of Science in Information Science focuses on the study of information, its storage, retrieval, analysis, and application in various fields using technology and analytical skills.',
     },
     {
       course: 'Computer Random',
-      description: 'Description about the course Lorem ipsum dolor sit amet consectetur. Feugiatest semp erpharetra volutpat et aultrices auctor eget. Ullamcorper nec morbi scelerisque.',
+      description: 'Generate random thesis title among available computer courses',
     },
   ]
 
