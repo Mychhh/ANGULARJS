@@ -67,6 +67,111 @@ export class ComputerCpeService {
       "thesis_title": "Design and Implementation of a Cloud-Based Disaster Management System",
       "thesis_title_description": "This thesis focuses on the design and implementation of a cloud-based disaster management system that can aid in the coordination and communication among various emergency services during disasters."
     },
+    {
+      "no": 13,
+      "thesis_title": "Design and Implementation of a Smart Irrigation System Using IoT",
+      "thesis_title_description": "This thesis aims to develop a smart irrigation system that utilizes IoT technologies to optimize water usage in agriculture and prevent overwatering or underwatering."
+    },
+    {
+      "no": 14,
+      "thesis_title": "Development of a Wireless Home Automation System",
+      "thesis_title_description": "This thesis focuses on designing and implementing a wireless home automation system that enables users to control their home appliances remotely using a mobile device or web application."
+    },
+    {
+      "no": 15,
+      "thesis_title": "Analysis and Optimization of Network Security Protocols",
+      "thesis_title_description": "This thesis investigates various network security protocols and evaluates their strengths and weaknesses. The aim is to optimize these protocols to enhance network security and protect against cyber threats."
+    },
+    {
+      "no": 16,
+      "thesis_title": "Design and Implementation of a Real-Time Traffic Management System",
+      "thesis_title_description": "This thesis proposes a real-time traffic management system that utilizes various technologies, including IoT and AI, to monitor and manage traffic flow in real-time and prevent congestion."
+    },
+    {
+      "no": 17,
+      "thesis_title": "Development of a Smart Hospital Management System",
+      "thesis_title_description": "This thesis focuses on designing and implementing a smart hospital management system that improves patient care, reduces waiting times, and enhances the overall efficiency of the hospital."
+    },
+    {
+      "no": 18,
+      "thesis_title": "Investigation and Optimization of Wireless Sensor Networks",
+      "thesis_title_description": "This thesis aims to investigate wireless sensor networks and optimize their performance, particularly in terms of energy consumption, data transmission, and network lifetime."
+    },
+    {
+      "no": 19,
+      "thesis_title": "Design and Implementation of a Solar-Powered Electric Vehicle Charging Station",
+      "thesis_title_description": "This thesis proposes a solar-powered electric vehicle charging station that provides a sustainable and renewable source of energy for electric vehicles."
+    },
+    {
+      "no": 20,
+      "thesis_title": "Analysis and Optimization of Cloud Computing Technologies",
+      "thesis_title_description": "This thesis investigates various cloud computing technologies and evaluates their performance, scalability, and security. The aim is to optimize these technologies to improve their overall efficiency and effectiveness."
+    },
+    {
+      "no": 21,
+      "thesis_title": "Development of an Automated Parking System",
+      "thesis_title_description": "This thesis proposes an automated parking system that utilizes various technologies, including IoT and AI, to optimize parking space utilization and reduce parking time and congestion."
+    },
+    {
+      "no": 22,
+      "thesis_title": "Design and Implementation of an Automated Farming System Using IoT",
+      "thesis_title_description": "This thesis proposes an automated farming system that utilizes various IoT technologies to improve crop yields, reduce labor costs, and enhance overall farming efficiency."
+    },
+    {
+      "no": 23,
+      "thesis_title": "Investigation and Optimization of Machine Learning Algorithms",
+      "thesis_title_description": "This thesis aims to investigate machine learning algorithms and evaluate their effectiveness in various applications, including image and speech recognition, natural language processing, and predictive analytics."
+    },
+    {
+      "no": 24,
+      "thesis_title": "Development of a Smart Traffic Light System",
+      "thesis_title_description": "This thesis proposes a smart traffic light system that utilizes various technologies, including IoT and AI, to optimize traffic flow, reduce waiting times, and prevent car accident"
+    },
+    {
+      "no": 25,
+      "thesis_title": "Design and Implementation of a Digital Signage System",
+      "thesis_title_description": "This thesis involves the development of a digital signage system using digital displays, media players, and content management software. The system will be capable of displaying various types of multimedia content, such as videos, images, and text messages."
+    },
+    {
+      "no": 26,
+      "thesis_title": "Investigating the Impact of Cybersecurity Threats on Industrial Control Systems",
+      "thesis_title_description": "This thesis aims to examine the effects of cyber attacks on industrial control systems and develop strategies to mitigate the risks. The study will focus on analyzing the vulnerabilities of SCADA systems and proposing security solutions to prevent cyber attacks."
+    },
+    {
+      "no": 27,
+      "thesis_title": "Design and Implementation of a Wireless Sensor Network for Environmental Monitoring",
+      "thesis_title_description": "This thesis involves the development of a wireless sensor network to monitor environmental parameters such as temperature, humidity, and air quality. The system will use low-power wireless sensors to collect data and transmit it to a central server for analysis."
+    },
+    {
+      "no": 28,
+      "thesis_title": "Design and Implementation of an Intelligent Traffic Control System",
+      "thesis_title_description": "This thesis aims to develop an intelligent traffic control system that uses real-time data to optimize traffic flow and reduce congestion. The system will incorporate machine learning algorithms to predict traffic patterns and adjust signal timings accordingly."
+    },
+    {
+      "no": 29,
+      "thesis_title": "Developing a Mobile Application for Disaster Response and Management",
+      "thesis_title_description": "This thesis involves the development of a mobile application that enables disaster responders to quickly access critical information and coordinate their efforts. The app will include features such as real-time communication, geolocation tracking, and resource management."
+    },
+    {
+      "no": 30,
+      "thesis_title": "Investigating the Performance of Wireless Mesh Networks in Disaster Scenarios",
+      "thesis_title_description": "This thesis aims to evaluate the performance of wireless mesh networks in disaster scenarios and identify factors that affect their performance. The study will involve analyzing the network's throughput, latency, and reliability in different disaster scenarios."
+    },
+    {
+      "no": 31,
+      "thesis_title": "Design and Implementation of a Smart Home Automation System",
+      "thesis_title_description": "This thesis involves the development of a smart home automation system that allows homeowners to control various devices and appliances using a smartphone or other smart devices. The system will incorporate machine learning algorithms to learn user preferences and automate routine tasks."
+    },
+    {
+      "no": 32,
+      "thesis_title": "Investigating the Use of Artificial Intelligence in Biomedical Engineering",
+      "thesis_title_description": "This thesis aims to explore the applications of artificial intelligence in biomedical engineering, such as image analysis, data processing, and predictive modeling. The study will investigate the advantages and challenges of using AI in this field and propose solutions to overcome the challenges."
+    },
+    {
+      "no": 33,
+      "thesis_title": "Design and Implementation of a Smart Agriculture System",
+      "thesis_title_description": "This thesis involves the development of a smart agriculture system that uses IoT devices to monitor soil conditions, crop growth, and weather patterns. The system will use data analytics to provide insights into crop yields and optimize resource usage."
+    },
   ]
 
   titleNumber: number = 0;

@@ -20,6 +20,7 @@ import { CoursesComponent } from './fields/courses/courses.component';
 import { CourseComponent } from './fields/course/course.component';
 import { GenerateTitleComponent } from './generate-title/generate-title.component';
 import { MadeWithLoveComponent } from './made-with-love/made-with-love.component';
+import { FooterComponent } from './footer/footer.component';
 
 const thesisTitleGeneratorRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -37,6 +38,7 @@ const thesisTitleGeneratorRoutes: Routes = [
     CourseComponent,
     GenerateTitleComponent,
     MadeWithLoveComponent,
+    FooterComponent,
   ],
   imports: [
     CommonModule,

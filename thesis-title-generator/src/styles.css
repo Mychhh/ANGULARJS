@@ -12,11 +12,16 @@
 }
 
 :root {
+    --BG-LIGHTEST-BLUE: #EDF1F5;
     --COLOR1: #D9D9D9;
     --COLOR-RED: #f43f5e;
     --COLOR-BLUE: #3b82f6;
     --COLOR-BLACK: #000;
     --COLOR-WHITE: #fff;
+}
+
+.bg-lightest-blue {
+    background-color: var(--BG-LIGHTEST-BLUE);
 }
 
 .color-black {
