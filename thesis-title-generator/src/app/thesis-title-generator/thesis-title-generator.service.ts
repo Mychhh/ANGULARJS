@@ -24,22 +24,27 @@ export class ThesisTitleGeneratorService {
     {
       course: 'IT',
       description: 'Bachelor of Science in Information Technology covers various aspects of computer science, information technology, and business management, preparing students for careers in IT and related fields.',
+      img: 'assets/images/IT.jpg',
     },
     {
       course: 'CS',
       description: 'Bachelor of Science in Computer Science program teaches computer programming, algorithms, data structures, software engineering, databases, and computer networks.',
+      img: 'assets/images/CS.jpg',
     },
     {
       course: 'CpE',
       description: 'Bachelor of Science in Computer Engineering combines computer science and electrical engineering principles to design and develop computer systems and networks.',
+      img: 'assets/images/CPE.jpg',
     },
     {
       course: 'IS',
       description: 'Bachelor of Science in Information Science focuses on the study of information, its storage, retrieval, analysis, and application in various fields using technology and analytical skills.',
+      img: 'assets/images/IS.jpg',
     },
     {
       course: 'Computer Random',
       description: 'Generate random thesis title among available computer courses',
+      img: 'assets/images/Random.jpg',
     },
   ]
 

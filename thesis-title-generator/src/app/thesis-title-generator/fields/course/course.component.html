@@ -1,23 +1,25 @@
 <div
     class="x course-card px-5 py-3 rounded-xl flex flex-col gap-3 border-solid border-2 border-blue-500 hover:scale-105 duration-300 ease-out hover:border-rose-500 duration-300 ease-out">
     <div class="flex flex-row items-center gap-3">
-        <img src="assets/images/CourseLogo.png" alt="cousr logo">
+        <img src={{course.img}} alt="course logo" class="w-12 rounded-full">
         <h4 class="text-lg font-semibold">{{course.course}}</h4>
     </div>
     <p
-        class="text-sm tracking-wider mt-2 border-solid border-t-2 border-blue-500 overflow-auto hide-scrollbar hover:border-rose-500 duration-300 ease-out">
+        class="text-sm tracking-wider mt-2 pt-2 border-solid border-t-2 border-blue-500 overflow-auto hide-scrollbar hover:border-rose-500 duration-300 ease-out">
         {{course.description}}</p>
 
 </div>
-<!-- 
-<style>
+
+<!-- <style>
 
 </style>
 
 <script>
-    const x = document.querySelector('.x')
+    let x = document.querySelector('.x');
 
-    console.log(x)
+    x?.addEventListener('hover', () => {
+        alert('sheesh');
+    })
 
 </script> -->
 <!-- <ng-container *ngFor="let course of courses;">

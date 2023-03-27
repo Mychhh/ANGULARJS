@@ -11,4 +11,5 @@ import { Courses } from 'src/app/interface/Courses';
 export class CourseComponent {
   //parent to child
   @Input() course: Courses = {} as Courses;
+
 }
