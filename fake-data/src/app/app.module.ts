@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FakeDataModule } from './fake-data/fake-data.module';
 
 import { AppComponent } from './app.component';
-import { FakeDataModule } from './fake-data/fake-data.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { FakeDataModule } from './fake-data/fake-data.module';
   ],
   imports: [
     BrowserModule,
-    FakeDataModule
+    HttpClientModule,
+    FakeDataModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
