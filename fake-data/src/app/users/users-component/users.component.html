@@ -1,21 +1,10 @@
-<!-- cards -->
-<ng-template ngFor let-userData [ngForOf]="fakeUsersData">
-    <div class="card-fake-data my-5 border border-dashed border-rose-700">
-        <!-- id -->
-        <p>User ID: {{userData.id}}</p>
-        <!-- email -->
-        <p>Email: {{userData.email}}</p>
-        <!-- name -->
-        <p>Name: {{userData.name}}</p>
-        <!-- phone -->
-        <p>Phone: {{userData.phone}}</p>
-        <!-- username -->
-        <p>Username: {{userData.username}}</p>
-        <!-- website -->
-        <p>Website: {{userData.website}}</p>
-    </div>
-</ng-template>
+<div class="card-user-container w-10/12 mx-auto gap-3">
 
-<!-- <div *ngFor="let userData of fakeUsersData;">
-    {{userData.name}}
-</div> -->
+    <ng-template ngFor let-userData [ngForOf]="fakeUsersData">
+        <app-user [fakeUserData]="userData"></app-user>
+    </ng-template>
+
+</div>
+
+
+<!-- <app-user [fakeUserData]="fakeUsersData"></app-user> -->
