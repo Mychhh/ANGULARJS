@@ -1,0 +1,10 @@
+<hr>
+<p>async-pipe works!</p>
+
+<div>
+    <code>promise|async</code>:
+    <button (click)="clicked()">{{ arrived ? 'Reset' : 'Resolve' }}</button>
+    <span> Wait for it... {{ greeting | async }}</span>
+</div>
+
+<div><code>observable|async</code>: Time: {{ time | async }}</div>

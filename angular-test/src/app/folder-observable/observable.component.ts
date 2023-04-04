@@ -26,7 +26,7 @@ export class ObservableComponent implements OnInit {
       .subscribe(
         (response) => {
           this.Data = { ...response.body! };
-          console.log(this.Data);
+          // console.log(this.Data);
         },
         (error) => {
           alert(error.message);
