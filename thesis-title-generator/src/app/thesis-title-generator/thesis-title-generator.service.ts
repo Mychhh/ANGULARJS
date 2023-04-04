@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 
 // Interface
 import { Courses } from '../interface/Courses'
@@ -19,6 +19,8 @@ import { ClipboardService } from 'ngx-clipboard';
 })
 
 export class ThesisTitleGeneratorService {
+
+  // isInHome: boolean = true;
 
   courses: Courses[] = [
     {
@@ -58,6 +60,11 @@ export class ThesisTitleGeneratorService {
     private computerRandomService: ComputerRandomService,
     private clipboardService: ClipboardService,
   ) { }
+
+  // isInHomeFunction(isHome: boolean): void {
+  //   this.isInHome = isHome;
+  // }
+
 
   // Copy
   copyToClipBoard(thesisTitle: ThesisTitle): void {

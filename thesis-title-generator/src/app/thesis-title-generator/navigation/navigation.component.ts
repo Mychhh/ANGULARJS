@@ -9,7 +9,7 @@ import { ThesisTitleGeneratorService } from '../thesis-title-generator.service'
 })
 export class NavigationComponent {
 
-  // isHome: boolean = false;
+  // isHome: boolean = true;
 
   constructor(private thesisTitleGeneratorService: ThesisTitleGeneratorService) {
     // this.isHome = thesisTitleGeneratorService.isInHome;

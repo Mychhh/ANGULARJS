@@ -14,26 +14,42 @@ import { Users } from 'src/app/interface/users';
 export class UsersComponent implements OnInit {
 
   fakeUsersData: Users[] = [];
+  headers: any;
+  isDataFetched: boolean = false;
 
-  constructor(private userService: UsersService) { }
-
-  ngOnInit(): void {
-    this.userService.getFakeUsersData()
-      .subscribe((data: [Users]) => {
-
-        for (let i of data) {
-          // console.log("Sheesh " + i.name);
-          this.fakeUsersData.push(i);
-        }
-
-      });
-    console.log(this.fakeUsersData);
-
-    // much more effiecient to fetch data
-    // this.userService.showFakeUsersData();
-
+  constructor(private userService: UsersService) {
+    this.showFakeData();
   }
 
+  ngOnInit(): void {
+  }
 
+  showFakeData(): void {
+    this.userService.showFakeUsersData()
+      .subscribe(
+        (response) => {
+          // getting the headers
+          const keys = response.headers.keys();
+
+          // mapping and storing the value
+          this.headers = keys.map((key: any) =>
+            `${key}: ${response.headers.get(key)}`
+          );
+
+          // access the body directly, which is typed as `Config`.
+          this.fakeUsersData = { ...response.body! };
+          this.isDataFetched = true;
+
+          // console.log(...response.body!);
+          // console.log(this.fakeUsersData);
+          // console.log(this.headers);
+        });
+
+    // setTimeout(() => {
+    //   console.log(this.fakeUsersData)
+    //   console.log("Sheesh " + this.fakeUsersData);
+    // },
+    //   5000);
+  }
 
 }

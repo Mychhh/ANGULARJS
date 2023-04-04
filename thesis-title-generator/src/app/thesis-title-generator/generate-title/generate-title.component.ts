@@ -34,6 +34,7 @@ export class GenerateTitleComponent implements OnInit {
     this.clickCourseToGenerateTitle(this.courseAcronym);
     this.thesisTitleGeneratorService.getThesisTitleFromRandomComputer();
 
+    // this.thesisTitleGeneratorService.isInHomeFunction(false);
 
   }
 

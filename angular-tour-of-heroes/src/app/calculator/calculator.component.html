@@ -1,0 +1,27 @@
+<div>
+
+    <div class="flex flex-col gap-3">
+        <!-- number1 -->
+        <div class="flex flex-row gap-3">
+            <p>number1</p>
+            <input id="number1" type="number" [(ngModel)]="number1">
+        </div>
+        <!-- number2 -->
+        <div class="flex flex-row gap-3">
+            <p>number2</p>
+            <input id="number2" type="number" [(ngModel)]="number2">
+        </div>
+
+        <div>
+            <p>Result: {{result}}</p>
+        </div>
+
+        <div>
+            <button (click)="addition()">Add</button>
+            <button (click)="subtraction()">Sub</button>
+            <button (click)="division()">Div</button>
+            <button (click)="multiplication()">Mul</button>
+        </div>
+    </div>
+
+</div>
