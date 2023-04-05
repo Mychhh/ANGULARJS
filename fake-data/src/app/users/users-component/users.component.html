@@ -1,11 +1,23 @@
-<div class="card-user-container w-10/12 mx-auto gap-3">
+<div *ngIf="isDataFetched && !isDataError;" class="w-10/12 mx-auto ">
+    <div class="mb-5">
+        <h1 class="text-lg font-medium">List of users</h1>
+    </div>
 
-    <ng-template [ngIf]="fakeUsersData.length !== 0">
-        <ng-template ngFor let-userData [ngForOf]="fakeUsersData">
+    <div class="card-user-container gap-3 w-11/12 mx-auto ">
+
+        <ng-template ngFor let-userData [ngForOf]="fakeUsersData ">
             <app-user [fakeUserData]="userData"></app-user>
         </ng-template>
-    </ng-template>
 
+    </div>
+</div>
+
+<div *ngIf="!isDataFetched && !isDataError;" class="w-10/12 mx-auto vh75 grid place-content-center">
+    <h1 class="text-4xl font-medium">Loading ...</h1>
+</div>
+
+<div *ngIf="isDataError && !isDataFetched;" class="w-10/12 mx-auto vh75 grid place-content-center">
+    <h1 class="text-4xl font-medium">There is an Error fetching your data</h1>
 </div>
 
 <!-- <app-user [fakeUserData]="fakeUsersData"></app-user> -->

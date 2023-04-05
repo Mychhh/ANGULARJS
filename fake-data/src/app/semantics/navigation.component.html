@@ -1,9 +1,12 @@
-<div class="w-10/12 mx-auto flex flex-row justify-between items-center h-20">
+<div class="w-10/12 mx-auto flex flex-row justify-between items-center h-20 text-lg font-medium">
     <p>Logo</p>
 
     <div class="flex flex-row gap-5">
-        <p>Users</p>
-        <p>Post</p>
+        <a routerLink="/Users">Users</a>
+        <a routerLink="/Posts">Post</a>
     </div>
 
 </div>
+
+<!-- content here -->
+<router-outlet></router-outlet>

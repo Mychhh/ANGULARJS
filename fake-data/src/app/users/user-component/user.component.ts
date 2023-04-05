@@ -6,6 +6,7 @@ import { Users } from 'src/app/interface/users';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
+
 export class UserComponent {
 
   @Input() fakeUserData: Users = {} as Users;

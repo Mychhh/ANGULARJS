@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { OnInit } from '@angular/core';
 
 import { UsersService } from '../users.service';
 
 import { Users } from 'src/app/interface/users';
+import { Subscription, tap, throwError } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-users',
@@ -11,45 +13,41 @@ import { Users } from 'src/app/interface/users';
   styleUrls: ['./users.component.css']
 })
 
-export class UsersComponent implements OnInit {
+export class UsersComponent implements OnInit, OnDestroy {
 
+  observableSubscription: Subscription | undefined;
   fakeUsersData: Users[] = [];
-  headers: any;
+
   isDataFetched: boolean = false;
+  isDataError: boolean = false;
+
+  headers: any;
 
   constructor(private userService: UsersService) {
-    this.showFakeData();
   }
 
   ngOnInit(): void {
-  }
-
-  showFakeData(): void {
-    this.userService.showFakeUsersData()
+    this.observableSubscription = this.userService
+      .getData()
       .subscribe(
-        (response) => {
-          // getting the headers
-          const keys = response.headers.keys();
-
-          // mapping and storing the value
-          this.headers = keys.map((key: any) =>
-            `${key}: ${response.headers.get(key)}`
-          );
-
-          // access the body directly, which is typed as `Config`.
-          this.fakeUsersData = { ...response.body! };
+        (response: Users[]) => {
+          this.fakeUsersData = response;
           this.isDataFetched = true;
-
-          // console.log(...response.body!);
-          // console.log(this.fakeUsersData);
-          // console.log(this.headers);
-        });
-
-    // setTimeout(() => {
-    //   console.log(this.fakeUsersData)
-    //   console.log("Sheesh " + this.fakeUsersData);
-    // },
-    //   5000);
+        },
+        (error: any) => {
+          this.isDataError = true;
+        },
+        () => {
+          console.log('Sheesh Done');
+          // alert('Message Fetched Succesfully');
+        }
+      );
   }
+
+  ngOnDestroy(): void {
+    this.observableSubscription!.unsubscribe();
+  }
+
+
 
 }

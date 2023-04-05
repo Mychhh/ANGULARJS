@@ -1,4 +1,5 @@
-<div class="card-fake-data border border-solid-2 border-blue-500 rounded-2xl p-3 sm:p-5 h-full">
+<div
+    class="card-fake-data border border-solid-2 border-blue-500 rounded-2xl p-3 sm:p-5 h-full hover:scale-105 duration-300 ">
     <!-- id -->
     <p>User ID: {{fakeUserData.id}}</p>
     <!-- email -->
@@ -12,18 +13,3 @@
     <!-- website -->
     <p>Website: {{fakeUserData.website}}</p>
 </div>
-
-<!-- <ng-template ngFor let-userData [ngForOf]="fakeUserData">
-    <div class="card-fake-data my-5 border border-dashed border-rose-700">
-        <p>User ID: {{userData.id}}</p>
-        <p>Email: {{userData.email}}</p>
-        <p>Name: {{userData.name}}</p>
-        <p>Phone: {{userData.phone}}</p>
-        <p>Username: {{userData.username}}</p>
-        <p>Website: {{userData.website}}</p>
-    </div>
-</ng-template> -->
-
-<!-- <div *ngFor="let userData of fakeUsersData;">
-    {{userData.name}}
-</div> -->
