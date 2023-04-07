@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { PostsService } from '../posts.service';
+
+import { Posts } from 'src/app/interface/posts';
 
 @Component({
   selector: 'app-posts',
@@ -6,6 +10,32 @@ import { Component } from '@angular/core';
   styleUrls: ['./posts.component.css']
 })
 
-export class PostsComponent {
+export class PostsComponent implements OnInit {
+
+  constructor(private postService: PostsService) { }
+
+  fakePostsData: Posts[] = [];
+
+  ngOnInit(): void {
+    this.getData();
+  }
+
+  getData(): void {
+    // console.log(`Sheesh ${this.postService.fakePostsDataUrl}`);
+    this.postService.getData().subscribe(
+
+      (response: Posts[]) => {
+        this.fakePostsData = response;
+      },
+      (error: any) => {
+        alert(error.message);
+      },
+      () => {
+        console.log('Sheesh');
+        console.log(this.fakePostsData);
+      }
+
+    );
+  }
 
 }

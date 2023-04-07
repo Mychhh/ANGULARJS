@@ -1,0 +1,14 @@
+<!-- <p>{{Posts.id}}</p> -->
+
+<div class="post_card flex flex-col gap-2 border-solid border-2 border-blue-500 rounded-2xl p-3">
+    <div class="flex flex-row justify-between">
+        <p><span class="font-semibold">Post</span> #{{Posts.id}}</p>
+        <p class="border-solid border-b-2 border-blue-500 px-2"><span class="font-semibold">By</span> User
+            #{{Posts.userId}}</p>
+    </div>
+
+    <div class="flex flex-col gap-2">
+        <h3><span class="font-semibold">Title:</span> {{Posts.title}}</h3>
+        <p><span class="font-semibold">Content:</span> {{Posts.body}}</p>
+    </div>
+</div>

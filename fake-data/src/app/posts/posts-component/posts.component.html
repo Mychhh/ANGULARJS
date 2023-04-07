@@ -1,1 +1,16 @@
-<p>posts works!</p>
+<div class="w-10/12 mx-auto ">
+    <div class="mb-5">
+        <h1 class="text-lg font-medium">List of Posts</h1>
+    </div>
+
+    <div class="w-full flex flex-col gap-3 items-center">
+        <ng-template ngFor let-fakePostData [ngForOf]="fakePostsData">
+            <app-post [Posts]="fakePostData"></app-post>
+        </ng-template>
+    </div>
+
+    <!-- <ng-template ngFor let-fakePostData [ngForOf]="fakePostsData">
+        <app-post [Posts]="fakePostData"></app-post>
+    </ng-template> -->
+
+</div>
