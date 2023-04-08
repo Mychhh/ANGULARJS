@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ObservableComponent } from './folder-observable/observable.component';
 import { AsyncPipeComponent } from './folder-async-pipe/async-pipe.component';
 import { AsyncComponent } from './folder-observable-promise/async.component';
+import { PostComponent } from './folder-post-request/post.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { AsyncComponent } from './folder-observable-promise/async.component';
     ObservableComponent,
     AsyncPipeComponent,
     AsyncComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,

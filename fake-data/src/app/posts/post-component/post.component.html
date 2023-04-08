@@ -1,6 +1,6 @@
 <!-- <p>{{Posts.id}}</p> -->
 
-<div class="post_card flex flex-col gap-2 border-solid border-2 border-blue-500 rounded-2xl p-3">
+<div class="post_card flex flex-col gap-2 border-solid border-2 border-blue-500 rounded-2xl p-3 mb-3">
     <div class="flex flex-row justify-between">
         <p><span class="font-semibold">Post</span> #{{Posts.id}}</p>
         <p class="border-solid border-b-2 border-blue-500 px-2"><span class="font-semibold">By</span> User
@@ -11,4 +11,14 @@
         <h3><span class="font-semibold">Title:</span> {{Posts.title}}</h3>
         <p><span class="font-semibold">Content:</span> {{Posts.body}}</p>
     </div>
+
+    <div class="flex flex-row justify-between">
+        <button
+            class="border border-solid-1 border-blue-500 rounded-full py-1 px-3 transition-all hover:border-rose-500 hover:scale-105 duration-300 ease-out">Update</button>
+        <button
+            class="border border-solid-1 border-blue-500 rounded-full py-1 px-3 transition-all hover:border-rose-500 hover:scale-105 duration-300 ease-out">Delete</button>
+    </div>
 </div>
+
+
+<div class="w-11/12 mx-auto border-solid border-b-2 border-rose-300"></div>
