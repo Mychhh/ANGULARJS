@@ -22,10 +22,26 @@ export class PostComponent implements OnInit {
 
   getRequest: GetRequest[] = [];
 
+  updatePostTemplate: GetRequest = {
+    id: 1,
+    title: 'foo foo',
+    body: 'bar bar',
+    userId: 1,
+  }
+
   constructor(private postService: PostService) { }
 
   ngOnInit(): void {
     // this.addNewPost();
+
+    // deletes a post
+    // this.postService
+    //   .deletePost(1)
+    //   .subscribe(
+    //     (response) => {
+    //       console.log(response)
+    //     }
+    //   );
   }
 
   addNewPost() {
@@ -54,10 +70,19 @@ export class PostComponent implements OnInit {
       (response: any) => {
         // this.getRequest = { ...response };
         console.log(response);
-
         this.getRequest = response;
-
       }
     )
   }
+
+  updatePost() {
+    this.postService.updatePost(this.updatePostTemplate, this.updatePostTemplate.id)
+      .subscribe(
+        (response) => {
+          console.log(response)
+        }
+      )
+  }
+
+
 }
