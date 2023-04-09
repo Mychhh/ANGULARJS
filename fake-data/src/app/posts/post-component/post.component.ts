@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Posts } from 'src/app/interface/posts';
 
@@ -10,4 +11,11 @@ import { Posts } from 'src/app/interface/posts';
 
 export class PostComponent {
   @Input() Posts: Posts = {} as Posts;
+
+  constructor(private router: Router) { }
+
+  updatePostPage(): void {
+    this.router.navigate(['/Update/Post']);
+  }
+
 }

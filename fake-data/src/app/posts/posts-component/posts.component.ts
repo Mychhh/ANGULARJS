@@ -12,27 +12,32 @@ import { Posts } from 'src/app/interface/posts';
 
 export class PostsComponent implements OnInit {
 
-  constructor(private postService: PostsService) { }
+  isDataFetched: boolean = false;
+  isDataError: boolean = false;
 
   fakePostsData: Posts[] = [];
+
+  constructor(private postsService: PostsService) { }
 
   ngOnInit(): void {
     this.getData();
   }
 
   getData(): void {
-    // console.log(`Sheesh ${this.postService.fakePostsDataUrl}`);
-    this.postService.getData().subscribe(
+    // console.log(`Sheesh ${this.postsService.fakePostsDataUrl}`);
+    this.postsService.readData().subscribe(
 
       (response: Posts[]) => {
         this.fakePostsData = response;
+        this.isDataFetched = true;
       },
       (error: any) => {
-        alert(error.message);
+        // alert(error.message);
+        this.isDataError = true;
       },
       () => {
-        console.log('Sheesh');
-        console.log(this.fakePostsData);
+        // console.log('Sheesh');
+        // console.log(this.fakePostsData);
       }
 
     );

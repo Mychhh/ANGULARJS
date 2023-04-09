@@ -1,20 +1,31 @@
-<div class="w-10/12 mx-auto ">
-    <div class="w-full flex flex-row justify-between mb-5">
-        <h1 class="text-lg font-medium">List of Posts</h1>
+<ng-container *ngIf="isDataFetched && !isDataError;">
+    <div class="w-10/12 mx-auto ">
+        <div class="w-full flex flex-row justify-between mb-5">
+            <h1 class="text-lg font-medium">List of Posts</h1>
 
-        <button
-            class="text-lg font-medium border border-solid-1 border-blue-500 rounded-full py-1 px-3 transition-all hover:border-rose-500 hover:scale-105 duration-300 ease-out">Create
-            post</button>
+            <a routerLink="/Create-Post"
+                class="text-lg font-medium border border-solid-1 border-blue-500 rounded-full py-1 px-3 transition-all hover:border-rose-500 hover:scale-105 duration-300 ease-out">Create
+                post
+            </a>
+        </div>
+
+        <div class="w-full flex flex-col gap-3 items-center">
+            <ng-template ngFor let-fakePostData [ngForOf]="fakePostsData">
+                <app-post [Posts]="fakePostData"></app-post>
+            </ng-template>
+        </div>
+
     </div>
+</ng-container>
 
-    <div class="w-full flex flex-col gap-3 items-center">
-        <ng-template ngFor let-fakePostData [ngForOf]="fakePostsData">
-            <app-post [Posts]="fakePostData"></app-post>
-        </ng-template>
+<ng-container *ngIf="!isDataFetched && !isDataError;">
+    <div class="w-10/12 mx-auto vh75 grid place-content-center">
+        <h1 class="text-4xl font-medium">Loading ...</h1>
     </div>
+</ng-container>
 
-    <!-- <ng-template ngFor let-fakePostData [ngForOf]="fakePostsData">
-        <app-post [Posts]="fakePostData"></app-post>
-    </ng-template> -->
-
-</div>
+<ng-container *ngIf="isDataError && !isDataFetched;">
+    <div class="w-10/12 mx-auto vh75 grid place-content-center">
+        <h1 class="text-4xl font-medium">There is an Error fetching your data</h1>
+    </div>
+</ng-container>
