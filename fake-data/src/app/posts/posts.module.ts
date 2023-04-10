@@ -10,7 +10,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { PostUpdateComponent } from './post-update-component/post-update.component';
 
 const appRoute: Routes = [
-  { path: 'Create-Post', component: PostCreateComponent }
+  { path: 'Create-Post', component: PostCreateComponent },
+  { path: 'Posts', component: PostsComponent },
 ]
 
 @NgModule({

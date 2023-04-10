@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -27,9 +27,8 @@ export class PostCreateComponent {
     if ((this.postData.title === '') || (this.postData.body === '')) {
       alert('Please complete the input and try again...');
     } else {
-      this.postsService.createData(this.postData).subscribe((response) => {
-        console.log(response)
-      })
+
+      this.createData();
 
       alert(
         `User# ${this.postData.userId} created a new post with a 
@@ -38,8 +37,6 @@ export class PostCreateComponent {
       );
 
       this.goToListOfPost();
-
-
     }
   }
 

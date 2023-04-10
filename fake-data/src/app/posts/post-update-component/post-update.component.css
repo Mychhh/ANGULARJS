@@ -1,0 +1,12 @@
+.vh75 {
+    height: 75vh;
+}
+
+.card_max_x {
+    max-width: 25rem;
+}
+
+.input_post:focus {
+    outline: none;
+    border: 1px solid #64748b;
+}

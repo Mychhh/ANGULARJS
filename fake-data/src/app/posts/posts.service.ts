@@ -1,7 +1,7 @@
 import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 import { Posts } from '../interface/posts';
 import { Post } from '../interface/post';
@@ -12,6 +12,10 @@ import { Post } from '../interface/post';
 
 export class PostsService {
 
+  post: Posts | undefined;
+  message: string = '';
+
+  // headers
   httpHeader = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -19,9 +23,14 @@ export class PostsService {
     })
   };
 
+  // url
   fakePostsDataUrl: string = `https://jsonplaceholder.typicode.com/posts`;
 
+  // constructor
   constructor(private http: HttpClient) { }
+
+  // callMe(): void {
+  // }
 
   // reads the data
   readData(): Observable<Posts[]> {
@@ -30,7 +39,17 @@ export class PostsService {
 
   // creates the data
   createData(post: Post): Observable<Post> {
-    return this.http.post<Post>(this.fakePostsDataUrl, post, this.httpHeader)
+    return this.http.post<Post>(this.fakePostsDataUrl, post, this.httpHeader);
+  }
+
+  // update the data
+  updateData(post: Posts, postId: number): Observable<Posts> {
+    return this.http.post<Posts>(`${this.fakePostsDataUrl}/${postId}`, post, this.httpHeader);
+  }
+
+  // delete the data
+  deleteTheData() {
+
   }
 
 }

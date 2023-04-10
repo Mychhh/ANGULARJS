@@ -1,3 +1,34 @@
 <div class="vh75 w-10/12 mx-auto grid place-content-center">
-    <p>post-update works!</p>
+
+    <!-- Card -->
+    <div class="card_max_x border-solid border-2 border-blue-500 rounded-xl p-5 flex flex-col gap-5">
+
+        <!-- header -->
+        <div>
+            <p>Hello World! user #{{updatePost.userId}} Update Post</p>
+        </div>
+
+        <!-- content -->
+        <div class="flex flex-col gap-3">
+            <!-- title -->
+            <label for="title">Title</label>
+            <!-- () is event binding -->
+            <!-- [] is property binding -->
+            <input class="input_post py-1 px-3 border-solid border-2 border-blue-500" type="text" id="title"
+                [(ngModel)]="updatePost.title" placeholder="Title">
+            <!-- body -->
+            <label for="body">Content</label>
+            <!-- <input type="text" id=""> -->
+            <textarea class="input_post py-1 px-3 border-solid border-2 border-blue-500" name="body" id="body" cols="30"
+                rows="10" [(ngModel)]="updatePost.body" placeholder="Content"></textarea>
+        </div>
+
+        <!-- footer -->
+        <div>
+            <button (click)="validateUpdateData()"
+                class="border border-solid-1 border-blue-500 rounded-full py-1 px-3 transition-all hover:border-rose-500 hover:scale-105 duration-300 ease-out">Update
+                Post</button>
+        </div>
+    </div>
+
 </div>
