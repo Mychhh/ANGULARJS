@@ -22,16 +22,18 @@ export class PostUpdateComponent implements OnInit {
 
   constructor(private router: Router, private postService: PostsService) { }
 
+  // initialize the data and validates the post if not empty
   ngOnInit(): void {
     this.updatePost = this.postService.post!
-    console.log(this.postService.message)
-    console.log(this.postService.post)
+    // console.log(this.postService.message)
+    // console.log(this.postService.post)
 
     if (this.updatePost === undefined) {
       this.redirectToPost();
     }
   }
 
+  // validate the post before updating
   validateUpdateData() {
     if ((this.updatePost.title === '') || (this.updatePost.body === '')) {
       alert('Fields cannot be empty...');
@@ -40,6 +42,7 @@ export class PostUpdateComponent implements OnInit {
     }
   }
 
+  // update function
   updateData() {
     this.postService.updateData(this.updatePost, this.updatePost.id)
 
@@ -53,6 +56,7 @@ export class PostUpdateComponent implements OnInit {
     this.redirectToPost();
   }
 
+  // redirect url function
   redirectToPost(): void {
     this.router.navigate(['Posts'])
   }

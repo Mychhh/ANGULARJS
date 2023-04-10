@@ -2,7 +2,7 @@
 
 <div class="post_card flex flex-col gap-2 border-solid border-2 border-blue-500 rounded-2xl p-3 mb-3">
     <div class="flex flex-row justify-between">
-        <p><span class="font-semibold">Post</span> #{{Posts.id}}</p>
+        <p><span class="font-semibold">Post</span> #{{Posts.userId}}</p>
         <p class="border-solid border-b-2 border-blue-500 px-2"><span class="font-semibold">By</span> User
             #{{Posts.userId}}</p>
     </div>
@@ -17,7 +17,8 @@
             class="border border-solid-1 border-blue-500 rounded-full py-1 px-3 transition-all hover:border-rose-500 hover:scale-105 duration-300 ease-out"
             (click)="updatePostPage()">Update</button>
         <button
-            class="border border-solid-1 border-blue-500 rounded-full py-1 px-3 transition-all hover:border-rose-500 hover:scale-105 duration-300 ease-out">Delete</button>
+            class="border border-solid-1 border-blue-500 rounded-full py-1 px-3 transition-all hover:border-rose-500 hover:scale-105 duration-300 ease-out"
+            (click)="deletePost()">Delete</button>
     </div>
 </div>
 

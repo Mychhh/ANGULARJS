@@ -13,7 +13,6 @@ import { Post } from '../interface/post';
 export class PostsService {
 
   post: Posts | undefined;
-  message: string = '';
 
   // headers
   httpHeader = {
@@ -48,8 +47,8 @@ export class PostsService {
   }
 
   // delete the data
-  deleteTheData() {
-
+  deleteData(postId: number) {
+    this.http.delete(`${this.fakePostsDataUrl}/${postId}`);
   }
 
 }
